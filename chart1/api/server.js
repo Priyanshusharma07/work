@@ -27,7 +27,7 @@ async function fetchData() {
 
 fetchData();
 
-app.get('/data', (req, res) => {
+app.get('/', (req, res) => {
 //   console.log("Here is the parsed data:");
 //   console.log(jsonData);  // Log parsed data to console
 
