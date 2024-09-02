@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<style href="style.css"></style>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts</title>
+</head>
+
+<body>
+    <div id="container">
+        <input type="text" id="stockname" aria-label="entre the Share Name">
+        <button id="submitbtn">submit</button>
+        <input class="volume"  type="checkbox" role="switch" id="volume">volume</input>
+        <input class="candle"  type="checkbox" role="switch" id="candlestick">candlestick</input>
+
+        <button id="News">For Stock News</button>
+    </div>
+    <div id="chartarea">
+
+        <div>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div id="timeline">
+
+            <button id="oneweek">1 week</button>
+            <button id="onemonth">1 month</button>
+            <button id="month3">3 monthYear</button>
+            <button id="all">All</button>
+        </div>
+    </div>
+</body>
+<!-- <script src="floatingbar.js"></script> -->
+<!-- <script src="proper.js"></script> -->
+<script src="try.js"></script>
+<script src="News.js"></script>
+
+
+</html>

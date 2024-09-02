@@ -1,0 +1,14 @@
+#body{
+        background-color: #000;
+}
+
+.container{
+    height: 200px;
+    width: 200px;
+    color: #000;
+}
+
+.timeline{
+    margin: auto;
+    padding:auto;
+}
