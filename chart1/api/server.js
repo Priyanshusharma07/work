@@ -32,7 +32,8 @@ app.get('/', (req, res) => {
 //   console.log(jsonData);  // Log parsed data to console
 
   if (jsonData) {
-    res.json(jsonData);  // Send JSON data as a response
+        res.status(200).json({ message: 'Data', jsonData });
+    // res.json(jsonData);  // Send JSON data as a response
   } else {
     res.send("Data is still loading or an error occurred.");
   }
