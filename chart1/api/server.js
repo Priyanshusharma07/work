@@ -1,42 +1,48 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const xml2js = require('xml2js');  // Import xml2js
+const xml2js = require('xml2js');
 
-let jsonData;  // Variable to store parsed JSON data
+
 
 async function fetchData() {
+
+  let jsonData;  
   try {
     const response = await axios.get('https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms');
-    const xmldata = response.data;  // Fetch XML data
+    const xmldata = response.data;  
 
-    // Parse XML to JSON
+    //  XML to JSON
     xml2js.parseString(xmldata, { explicitArray: false }, (err, result) => {
       if (err) {
         console.error('Error parsing XML:', err);
       } else {
-        jsonData = result;  // Store the parsed JSON data
-        // console.log('Parsed JSON data:', jsonData);  // Optional: Log parsed data
+        jsonData = result; 
+        // console.log('Parsed JSON data:', jsonData);  
       }
     });
+    return jsonData;
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 }
 
-fetchData();
 
-app.get('/', (req, res) => {
-//   console.log("Here is the parsed data:");
-//   console.log(jsonData);  // Log parsed data to console
+app.get('/',async (req, res) => {
+  //   console.log("Here is the parsed data:");
+  //   console.log(jsonData);  // Log parsed data to console
+  
+  let da=await fetchData();
 
   if (jsonData) {
-        res.status(200).json({ message: 'Data', jsonData });
-    // res.json(jsonData);  // Send JSON data as a response
+    res.status(200).json({ message:"data", da });
+    // res.status(200).json({error: 'Password does not match'});
+    // res.json(jsonData);  
   } else {
     res.send("Data is still loading or an error occurred.");
   }
 });
+
 
 
 app.listen(3000);
