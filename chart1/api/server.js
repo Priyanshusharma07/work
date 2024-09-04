@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const axios = require('axios');
 const xml2js = require('xml2js');
+const cors = require('cors');
 
 
-
+app.use(cors()); 
 async function fetchData() {
 
   let jsonData;  
