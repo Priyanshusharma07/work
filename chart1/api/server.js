@@ -3,9 +3,9 @@ const app = express();
 const axios = require('axios');
 const xml2js = require('xml2js');
 
-const cors = require('cors');
+// const cors = require('cors');
 
-app.use(cors()); 
+// app.use(cors()); 
 
 
 async function fetchData() {
