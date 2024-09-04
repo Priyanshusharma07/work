@@ -34,7 +34,7 @@ app.get('/',async (req, res) => {
   
   let da=await fetchData();
 
-  if (jsonData) {
+  if (da) {
     res.status(200).json({ message:"data", da });
     // res.status(200).json({error: 'Password does not match'});
     // res.json(jsonData);  
